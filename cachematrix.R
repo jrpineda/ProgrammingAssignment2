@@ -19,7 +19,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 #Next we input the modified matrix and actually invert it in cacheinv
 
-cacheinv <- function(x, ...) {
+cachesolve <- function(x, ...) {
         inv <- x$getinv()
         if(!is.null(inv)) {
                 message("getting cached data")
@@ -39,7 +39,9 @@ cacheinv <- function(x, ...) {
 #[4,]  0.64109285  0.4640877  0.7098748  0.3425776
 
 # x2<-makeCacheMatrix(x)
-#cacheinv(x2)
+#cachesolve(x2)
+
+#getting cached data
 #            [,1]       [,2]       [,3]      [,4]
 #[1,]  1.82768681  2.9216598  3.3100835  6.598801
 #[2,] -0.07831979 -0.1450634 -0.6487481 -0.693910
@@ -47,3 +49,4 @@ cacheinv <- function(x, ...) {
 #[4,] -1.03415780 -0.8763917 -1.4851881 -1.997664
 
 #These numbers are correct for x2^-1
+#So it looks like it works
